@@ -60,6 +60,17 @@ const employeeInfo = [
     salary: 34000,
   },
 ];
+function addBonusForSelectedDepartment(employeeInfo,bonus,department) {
+  // console.log(employeeInfo)
+  return employeeInfo.reduce((x,y) => {
+    if (y.department === department){
+      return x + y.salary + bonus
+    }
+    return x
+  
+}, 0)
+  
+}
 
 console.log(addBonusForSelectedDepartment(employeeInfo, 5000, "HR")); // 69000
 console.log(addBonusForSelectedDepartment(employeeInfo, 1000, "Operations")); // 67000
